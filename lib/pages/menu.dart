@@ -13,7 +13,7 @@ class Menu extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(50),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //colorea y aprende
                   ElevatedButton(
@@ -26,7 +26,7 @@ class Menu extends StatelessWidget {
                       image: AssetImage("assets/images/bttn_colorea.png"),
                     ),
                   ),
-
+                  const SizedBox(height: 30),
                   // Aprende jugando
                   ElevatedButton(
                     style: Styles.button_style,
@@ -49,7 +49,7 @@ class Menu extends StatelessWidget {
                         fit: BoxFit.fill,
                         image: AssetImage("assets/images/ptc.png")),
                   ),
-
+                  const SizedBox(height: 70),
                   //SALIR
                   ElevatedButton(
                     style: Styles.button_style,

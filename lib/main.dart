@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         'i': (context) => const LetraI(),
         'o': (context) => const LetraO(),
         'u': (context) => const LetraU(),
-        'ptc': (context) => const FruitGame(),
+        'ptc': (context) => const FruitSelectApp(),
 
         //como para la pantalla DRAW ahora se pasan 3 listas distintas, ya no se usa ruteo
         // "draw": (context) => DrawPage(

@@ -1,22 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() async {
-  runApp(const FruitGame());
-}
-
-class FruitGame extends StatelessWidget {
-  const FruitGame({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "seccion arrastra y coloca",
-      home: FruitSelectApp(),
-    );
-  }
-}
-
 class FruitSelectApp extends StatefulWidget {
   const FruitSelectApp({Key? key}) : super(key: key);
 
@@ -40,7 +23,15 @@ class _FruitSelectAppState extends State<FruitSelectApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("arrastra la palabra con la letra inicial"),
+        // leading: IconButton(
+        //     onPressed: () {
+        //       Navigator.pop(context);
+        //     },
+        //     icon: Icon(Icons.arrow_back)),
+        title: const Text(
+          "arrastra la palabra con la letra inicial",
+          style: TextStyle(fontSize: 15),
+        ),
         centerTitle: false,
         backgroundColor: const Color(0xFF32a852),
       ),

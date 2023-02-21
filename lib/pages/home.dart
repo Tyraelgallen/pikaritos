@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
                   Navigator.of(context).pushNamed('menu');
                 },
                 child: const Image(
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                     image: AssetImage("assets/images/jugars.png")),
               ),
             ],
