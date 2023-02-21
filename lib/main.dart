@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leer_escribir/pages/drag_drop_colores.dart';
 import 'package:leer_escribir/sound_vocales/a.dart';
 import 'package:leer_escribir/pages/draw_page.dart';
 import 'package:leer_escribir/sound_vocales/e.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         'i': (context) => const LetraI(),
         'o': (context) => const LetraO(),
         'u': (context) => const LetraU(),
+        'ptc': (context) => const FruitGame(),
 
         //como para la pantalla DRAW ahora se pasan 3 listas distintas, ya no se usa ruteo
         // "draw": (context) => DrawPage(

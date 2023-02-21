@@ -39,6 +39,7 @@ class LetraU extends StatelessWidget {
           child: SizedBox(
             width: size.width,
             child: TextFormField(
+              textAlign: TextAlign.center,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20))),

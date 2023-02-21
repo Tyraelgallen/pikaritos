@@ -9,58 +9,66 @@ class MenuColorea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.all(50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Image(
-                image: AssetImage("assets/images/pikaritos.png"),
+              // vocales a&u
+              ElevatedButton(
+                style: Styles.button_style,
+                onPressed: () {
+                  // Navigator.of(context).pushNamed('draw');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DrawPage(
+                                list: drawVocales,
+                              )));
+                },
+                child: const Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/images/bttn_a_u.png"),
+                ),
               ),
 
-              //JUGAR
+              // numeros 0&9
               ElevatedButton(
-                  style: Styles.button_style,
-                  onPressed: () {
-                    // Navigator.of(context).pushNamed('draw');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DrawPage(
-                                  list: drawVocales,
-                                )));
-                  },
-                  child: Texto("Vocales")),
+                style: Styles.button_style,
+                onPressed: () {
+                  // Navigator.of(context).pushNamed('a');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DrawPage(
+                                list: drawNumeros,
+                              )));
+                },
+                child: const Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/images/bttn_0_9.png"),
+                ),
+              ),
 
-              // OPCIONES
-              ElevatedButton(
-                  style: Styles.button_style,
-                  onPressed: () {
-                    // Navigator.of(context).pushNamed('a');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DrawPage(
-                                  list: drawNumeros,
-                                )));
-                  },
-                  child: Texto("Números")),
-
-              //CREDITOS
+              // abecedario a&z
 
               ElevatedButton(
-                  style: Styles.button_style,
-                  onPressed: () {
-                    // Navigator.of(context).pushNamed('home');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DrawPage(
-                                  list: drawAlfabeto,
-                                )));
-                  },
-                  child: Texto("Alfabeto")),
+                style: Styles.button_style,
+                onPressed: () {
+                  // Navigator.of(context).pushNamed('home');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DrawPage(
+                                list: drawAlfabeto,
+                              )));
+                },
+                child: const Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/images/bttn_a_z.png"),
+                ),
+              ),
 
               //SALIR
               ElevatedButton(
@@ -69,13 +77,9 @@ class MenuColorea extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 child: const Image(
-                  fit: BoxFit.cover,
-                  image: AssetImage("assets/images/salir.png"),
+                  fit: BoxFit.scaleDown,
+                  image: AssetImage("assets/images/close.png"),
                 ),
-              ),
-
-              const Image(
-                image: AssetImage("assets/images/pikaritos.png"),
               ),
             ],
           ),

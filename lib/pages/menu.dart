@@ -7,7 +7,7 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.white,
         body: ListView(
           children: [
             Padding(
@@ -15,34 +15,40 @@ class Menu extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Image(
-                    image: AssetImage("assets/images/pikaritos.png"),
+                  //colorea y aprende
+                  ElevatedButton(
+                    style: Styles.button_style,
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('menu_draw');
+                    },
+                    child: const Image(
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/images/bttn_colorea.png"),
+                    ),
                   ),
 
-                  //JUGAR
+                  // Aprende jugando
                   ElevatedButton(
-                      style: Styles.button_style,
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('menu_draw');
-                      },
-                      child: Texto("Colorea")),
+                    style: Styles.button_style,
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('a');
+                    },
+                    child: const Image(
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/images/aprendejugando.png"),
+                    ),
+                  ),
 
-                  // OPCIONES
+                  //aprende a leer
                   ElevatedButton(
-                      style: Styles.button_style,
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('a');
-                      },
-                      child: Texto("Escucha y Escribe")),
-
-                  //CREDITOS
-
-                  ElevatedButton(
-                      style: Styles.button_style,
-                      onPressed: () {
-                        // Navigator.of(context).pushNamed('home');
-                      },
-                      child: Texto("Aprende a Leer")),
+                    style: Styles.button_style,
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('ptc');
+                    },
+                    child: const Image(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets/images/ptc.png")),
+                  ),
 
                   //SALIR
                   ElevatedButton(
@@ -52,12 +58,8 @@ class Menu extends StatelessWidget {
                     },
                     child: const Image(
                       fit: BoxFit.cover,
-                      image: AssetImage("assets/images/salir.png"),
+                      image: AssetImage("assets/images/close.png"),
                     ),
-                  ),
-
-                  const Image(
-                    image: AssetImage("assets/images/pikaritos.png"),
                   ),
                 ],
               ),
