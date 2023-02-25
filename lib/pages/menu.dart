@@ -57,7 +57,7 @@ class Menu extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     child: const Image(
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                       image: AssetImage("assets/images/close.png"),
                     ),
                   ),

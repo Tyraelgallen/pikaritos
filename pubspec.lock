@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  awesome_ripple_animation:
+    dependency: "direct main"
+    description:
+      name: awesome_ripple_animation
+      sha256: "1a1c122580a1c830e7f37ad9484ae65b673e1c792cb49c9e05d725ed29286af3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.0"
   boolean_selector:
     dependency: transitive
     description:
