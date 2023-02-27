@@ -1,4 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:leer_escribir/colors.dart/black.dart';
+import 'package:leer_escribir/colors.dart/blue.dart';
+import 'package:leer_escribir/colors.dart/brown.dart';
+import 'package:leer_escribir/colors.dart/green.dart';
+import 'package:leer_escribir/colors.dart/orange.dart';
+import 'package:leer_escribir/colors.dart/pink.dart';
+import 'package:leer_escribir/colors.dart/red.dart';
+import 'package:leer_escribir/colors.dart/violet.dart';
+import 'package:leer_escribir/colors.dart/white.dart';
+import 'package:leer_escribir/colors.dart/yellow.dart';
 import 'package:leer_escribir/figuras%20geometricas/fgcircle.dart';
 import 'package:leer_escribir/figuras%20geometricas/fgcuadrado.dart';
 import 'package:leer_escribir/figuras%20geometricas/fgestrella.dart';
@@ -34,7 +44,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.orange),
-      initialRoute: 'home',
+      initialRoute: 'white',
       routes: {
         'home': (context) => const Home(),
         'menu': (context) => const Menu(),
@@ -57,6 +67,17 @@ class MyApp extends StatelessWidget {
         'star': (context) => const Fgestrella(),
         'penta': (context) => const Fgpentagono(),
         'octa': (context) => const Fgoctagono(),
+        //
+        'black': (context) => const ColorsBlack(),
+        'blue': (context) => const ColorsBlue(),
+        'brown': (context) => const ColorsBrown(),
+        'green': (context) => const ColorsGreen(),
+        'orange': (context) => const ColorsOrange(),
+        'pink': (context) => const ColorsPink(),
+        'red': (context) => const ColorsRed(),
+        'violet': (context) => const ColorsViolet(),
+        'white': (context) => const ColorsWhite(),
+        'yellow': (context) => const ColorsYellow(),
 
         //como para la pantalla DRAW ahora se pasan 3 listas distintas, ya no se usa ruteo
         // "draw": (context) => DrawPage(

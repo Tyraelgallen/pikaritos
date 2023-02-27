@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:soundpool/soundpool.dart';
 
 class ColorsBlack extends StatelessWidget {
   const ColorsBlack({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return MaterialApp(
       title: 'Glisser Déposer Quiz',
       theme: ThemeData(
@@ -40,67 +43,60 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Column(
                   children: <Widget>[
-                    Row(
-                      children: [
-                        Image.asset(
-                          "assets/c_black.png",
-                          width: 500,
+                    Image.asset(
+                      "assets/c_black.png",
+                      width: 400,
+                      // onPressed: () {
+                      //_Patosoundbutton();
+                      //  },
+                    ),
+                    const Text(
+                      '    BLACK',
+                      style: TextStyle(fontSize: 20, color: Colors.grey),
+                    ),
+                    const SizedBox(height: 8),
+                    Container(
+                      height: 100,
+                      width: 400,
+                      decoration: BoxDecoration(
+                        color: Colors.deepOrange.shade100,
+                        border: Border.all(
+                          width: 1,
+                          color: Colors.black38,
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              ' BLACK',
-                              style:
-                                  TextStyle(fontSize: 90, color: Colors.grey),
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                      padding: const EdgeInsets.all(10),
+                      child: DragTarget<String>(
+                        onAccept: (char) {
+                          setState(() {
+                            ans = char;
+                          });
+                        },
+                        builder: (context, candidateData, rejectedData) {
+                          return Container(
+                            width: 100,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                width: 1,
+                                color: Colors.black38,
+                              ),
+                              borderRadius: BorderRadius.circular(15),
                             ),
-                            const SizedBox(height: 8),
-                            Container(
-                              height: 150,
-                              decoration: BoxDecoration(
-                                color: Colors.deepOrange.shade100,
-                                border: Border.all(
-                                  width: 1,
-                                  color: Colors.black38,
-                                ),
-                                borderRadius: BorderRadius.circular(18),
+                            alignment: Alignment.center,
+                            child: Text(
+                              ans,
+                              style: const TextStyle(
+                                fontSize: 20,
                               ),
-                              padding: const EdgeInsets.all(10),
-                              child: DragTarget<String>(
-                                onAccept: (char) {
-                                  setState(() {
-                                    ans = char;
-                                  });
-                                },
-                                builder:
-                                    (context, candidateData, rejectedData) {
-                                  return Container(
-                                    width: 150,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(
-                                        width: 1,
-                                        color: Colors.black38,
-                                      ),
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      ans,
-                                      style: const TextStyle(
-                                        fontSize: 35,
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
+                            ),
+                          );
+                        },
+                      ),
                     ),
                     Row(
-                      children: ["blcka", "black", "ckalb"]
+                      children: ["negro", "grone", "engro"]
                           .map<Widget>(buildAnswer)
                           .toList(),
                     )
@@ -111,16 +107,16 @@ class _HomePageState extends State<HomePage> {
                     top: 10,
                     right: 0,
                     left: 0,
-                    child: ans == "black"
+                    child: ans == "negro"
                         ? const Icon(
                             Icons.check,
                             color: Colors.green,
-                            size: 400,
+                            size: 300,
                           )
                         : const Icon(
                             Icons.close,
                             color: Colors.red,
-                            size: 400,
+                            size: 300,
                           ),
                   ),
               ],
@@ -135,6 +131,30 @@ class _HomePageState extends State<HomePage> {
                 style: TextButton.styleFrom(foregroundColor: Colors.grey),
                 child: const Text("Replay"),
               ),
+          ],
+        ),
+      ),
+      // . botones Colours
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 30),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FloatingActionButton(
+              heroTag: "back2",
+              tooltip: "Atras",
+              onPressed: () {},
+              child: const Icon(Icons.keyboard_double_arrow_left),
+            ),
+            const SizedBox(width: 75),
+            FloatingActionButton(
+              heroTag: "next2",
+              tooltip: "Adelante",
+              onPressed: () {
+                Navigator.of(context).pushNamed('casa');
+              },
+              child: const Icon(Icons.keyboard_double_arrow_right),
+            )
           ],
         ),
       ),
@@ -171,7 +191,7 @@ class _HomePageState extends State<HomePage> {
           child: Text(
             answer,
             style: const TextStyle(
-              fontSize: 30,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -179,4 +199,14 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+//------------------------------------------------------------
+Future<void> _Patosoundbutton() async {
+  Soundpool pool = Soundpool(streamType: StreamType.notification);
+  int soundId =
+      await rootBundle.load('assets/pato.mp3').then((ByteData soundData) {
+    return pool.load(soundData);
+  });
+  int streamId = await pool.play(soundId);
 }
