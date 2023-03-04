@@ -6,28 +6,39 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Colors.white,
-        body: Padding(
-          padding: const EdgeInsets.all(50),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Image(
-                image: AssetImage("assets/images/portada.png"),
-              ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(50),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image(
+                    image: AssetImage(
+                      "assets/images/portada.png",
+                    ),
+                    width: 300,
+                  ),
 
-              //JUGAR
-              ElevatedButton(
-                style: Styles.button_style,
-                onPressed: () {
-                  Navigator.of(context).pushNamed('menu');
-                },
-                child: const Image(
-                    fit: BoxFit.cover,
-                    image: AssetImage("assets/images/jugars.png")),
+                  //JUGAR
+                  ElevatedButton(
+                    style: Styles.button_style,
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('menu');
+                    },
+                    child: Image(
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/images/jugars.png"),
+                      width: 300,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ));
   }

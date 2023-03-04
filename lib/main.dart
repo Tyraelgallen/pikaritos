@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.orange),
-      initialRoute: 'white',
+      initialRoute: 'home',
       routes: {
         'home': (context) => const Home(),
         'menu': (context) => const Menu(),

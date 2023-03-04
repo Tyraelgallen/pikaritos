@@ -79,6 +79,7 @@ class MenuColorea extends StatelessWidget {
                 child: const Image(
                   fit: BoxFit.scaleDown,
                   image: AssetImage("assets/images/close.png"),
+                  width: 100,
                 ),
               ),
             ],
