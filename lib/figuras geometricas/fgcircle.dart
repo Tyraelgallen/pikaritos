@@ -76,7 +76,9 @@ class Fgcircle extends StatelessWidget {
             FloatingActionButton(
               heroTag: "back2",
               tooltip: "Atras",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('home');
+              },
               child: const Icon(Icons.keyboard_double_arrow_left),
             ),
             const SizedBox(width: 75),

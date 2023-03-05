@@ -143,7 +143,9 @@ class _HomePageState extends State<HomePage> {
             FloatingActionButton(
               heroTag: "back2",
               tooltip: "Atras",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('home');
+              },
               child: const Icon(Icons.keyboard_double_arrow_left),
             ),
             const SizedBox(width: 75),
@@ -151,7 +153,7 @@ class _HomePageState extends State<HomePage> {
               heroTag: "next2",
               tooltip: "Adelante",
               onPressed: () {
-                Navigator.of(context).pushNamed('casa');
+                Navigator.of(context).pushNamed('blue');
               },
               child: const Icon(Icons.keyboard_double_arrow_right),
             )
