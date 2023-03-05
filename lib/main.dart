@@ -90,3 +90,5 @@ class MyApp extends StatelessWidget {
 // git add .
 //  git commit -m "cambios de pantalla"
 // git push -u origin main
+
+// para actualizar colaboraicones ----  > git pull
