@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
         'star': (context) => const Fgestrella(),
         'penta': (context) => const Fgpentagono(),
         'octa': (context) => const Fgoctagono(),
-        //
+        // colores
         'black': (context) => const ColorsBlack(),
         'blue': (context) => const ColorsBlue(),
         'brown': (context) => const ColorsBrown(),
@@ -78,6 +78,8 @@ class MyApp extends StatelessWidget {
         'violet': (context) => const ColorsViolet(),
         'white': (context) => const ColorsWhite(),
         'yellow': (context) => const ColorsYellow(),
+
+        // inicio de actividades de construccion alfabetica
 
         //como para la pantalla DRAW ahora se pasan 3 listas distintas, ya no se usa ruteo
         // "draw": (context) => DrawPage(
