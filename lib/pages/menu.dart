@@ -33,7 +33,7 @@ class Menu extends StatelessWidget {
                     ElevatedButton(
                       style: Styles.button_style,
                       onPressed: () {
-                        Navigator.of(context).pushNamed('a');
+                        Navigator.of(context).pushNamed('vocales');
                       },
                       child: const Image(
                         fit: BoxFit.cover,
@@ -58,7 +58,7 @@ class Menu extends StatelessWidget {
                     ElevatedButton(
                         style: Styles.button_style,
                         onPressed: () {
-                          Navigator.of(context).pushNamed('circle');
+                          Navigator.of(context).pushNamed('figurasgeom');
                         },
                         child: Text(
                           "Figuras Geometricas",
@@ -68,7 +68,7 @@ class Menu extends StatelessWidget {
                     ElevatedButton(
                         style: Styles.button_style,
                         onPressed: () {
-                          Navigator.of(context).pushNamed('black');
+                          Navigator.of(context).pushNamed('colors');
                         },
                         child: Text(
                           "Globos de Colores",

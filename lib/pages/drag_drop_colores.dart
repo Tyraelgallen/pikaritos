@@ -173,11 +173,11 @@ const List<FruitItem> fruitNameList = [
 ];
 
 List<FruitImage> fruitImages = [
-  FruitImage(name: 'Apple', image: "assets/apple.png"),
-  FruitImage(name: 'Banana', image: "assets/banana.png"),
-  FruitImage(name: 'Grapes', image: "assets/grape.png"),
-  FruitImage(name: 'Mango', image: "assets/mango.png"),
-  FruitImage(name: 'Strawberry', image: "assets/strawberry.png"),
+  FruitImage(name: 'Apple', image: "assets/fruits/apple.png"),
+  FruitImage(name: 'Banana', image: "assets/fruits/banana.png"),
+  FruitImage(name: 'Grapes', image: "assets/fruits/grape.png"),
+  FruitImage(name: 'Mango', image: "assets/fruits/mango.png"),
+  FruitImage(name: 'Strawberry', image: "assets/fruits/strawberry.png"),
 ];
 
 class FruitItem {

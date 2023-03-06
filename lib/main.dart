@@ -1,36 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:leer_escribir/colors.dart/black.dart';
-import 'package:leer_escribir/colors.dart/blue.dart';
-import 'package:leer_escribir/colors.dart/brown.dart';
-import 'package:leer_escribir/colors.dart/green.dart';
-import 'package:leer_escribir/colors.dart/orange.dart';
-import 'package:leer_escribir/colors.dart/pink.dart';
-import 'package:leer_escribir/colors.dart/red.dart';
-import 'package:leer_escribir/colors.dart/violet.dart';
-import 'package:leer_escribir/colors.dart/white.dart';
-import 'package:leer_escribir/colors.dart/yellow.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgcircle.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgcuadrado.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgestrella.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgexagono.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgoctagono.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgpentagono.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgrectangulo.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgrombo.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgtrapecio.dart';
-import 'package:leer_escribir/figuras%20geometricas/fgtriangulo.dart';
+import 'package:leer_escribir/colors/colors.dart';
+import 'package:leer_escribir/figuras_geometricas/figurasgeomet.dart';
 import 'package:leer_escribir/pages/drag_drop_colores.dart';
-import 'package:leer_escribir/sound_vocales/a.dart';
-import 'package:leer_escribir/pages/draw_page.dart';
 import 'package:leer_escribir/sound_vocales/abcd.dart';
-import 'package:leer_escribir/sound_vocales/e.dart';
 import 'package:leer_escribir/pages/home.dart';
-import 'package:leer_escribir/sound_vocales/i.dart';
-import 'package:leer_escribir/images.dart';
 import 'package:leer_escribir/pages/menu.dart';
-import 'package:leer_escribir/sound_vocales/o.dart';
-import 'package:leer_escribir/sound_vocales/u.dart';
 import 'package:leer_escribir/pages/menu_colorea.dart';
+import 'package:leer_escribir/sound_vocales/vocales.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,42 +25,11 @@ class MyApp extends StatelessWidget {
         'home': (context) => const Home(),
         'menu': (context) => const Menu(),
         'menu_draw': (context) => const MenuColorea(),
-        'a': (context) => const LetraA(),
-        'e': (context) => const LetraE(),
-        'i': (context) => const LetraI(),
-        'o': (context) => const LetraO(),
-        'u': (context) => const LetraU(),
+        'vocales': (context) => const VocalesPage(),
         'ptc': (context) => const FruitSelectApp(),
         'abc': (context) => const AbcScreen(),
-        // seccion figuras geometricas
-        'circle': (context) => const Fgcircle(),
-        'triangl': (context) => const Fgtriangle(),
-        'square': (context) => const Fgcuadrado(),
-        'rectngl': (context) => const Fgrectangulo(),
-        'romb': (context) => const Fgrombo(),
-        'trap': (context) => const Fgtrapecio(),
-        'exag': (context) => const Fgexagono(),
-        'star': (context) => const Fgestrella(),
-        'penta': (context) => const Fgpentagono(),
-        'octa': (context) => const Fgoctagono(),
-        // colores
-        'black': (context) => const ColorsBlack(),
-        'blue': (context) => const ColorsBlue(),
-        'brown': (context) => const ColorsBrown(),
-        'green': (context) => const ColorsGreen(),
-        'orange': (context) => const ColorsOrange(),
-        'pink': (context) => const ColorsPink(),
-        'red': (context) => const ColorsRed(),
-        'violet': (context) => const ColorsViolet(),
-        'white': (context) => const ColorsWhite(),
-        'yellow': (context) => const ColorsYellow(),
-
-        // inicio de actividades de construccion alfabetica
-
-        //como para la pantalla DRAW ahora se pasan 3 listas distintas, ya no se usa ruteo
-        // "draw": (context) => DrawPage(
-        //       list: vocales,
-        //     ),
+        'figurasgeom': (context) => const FigurasGeometricas(),
+        'colors': (context) => const ColorsPage(),
       },
     );
   }

@@ -15,7 +15,7 @@ class _DrawPageState extends State<DrawPage> {
   late ScribbleNotifier notifier;
 
   // int page = widget.list.length;
-  int current_page = 0;
+  int currentPage = 0;
 
   @override
   void initState() {
@@ -24,16 +24,16 @@ class _DrawPageState extends State<DrawPage> {
   }
 
   void next() {
-    if (current_page + 1 < widget.list.length) {
-      current_page++;
+    if (currentPage + 1 < widget.list.length) {
+      currentPage++;
       notifier.clear();
       // setState(() {});
     }
   }
 
   void back() {
-    if (current_page != 0) {
-      current_page--;
+    if (currentPage != 0) {
+      currentPage--;
       notifier.clear();
       // setState(() {});
     }
@@ -56,17 +56,22 @@ class _DrawPageState extends State<DrawPage> {
       ),
       body: SingleChildScrollView(
         child: SizedBox(
-          height: size.height * 2,
+          height: size.height,
           child: Stack(
             children: [
               //IMG
-              // Text(current_page.toString()),
+              // Text(currentPage.toString()),
               SafeArea(
-                child: Image.asset(
-                  widget.list[current_page],
-                  width: size.width,
-                  height: size.height,
-                  fit: BoxFit.contain,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 100, right: 70),
+                    child: Image.asset(
+                      widget.list[currentPage],
+                      width: size.width,
+                      // height: size.height,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
               ),
               Scribble(

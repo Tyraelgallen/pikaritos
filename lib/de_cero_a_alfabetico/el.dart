@@ -1,28 +1,13 @@
 import 'package:flutter/material.dart';
 
-class D_D_EL extends StatelessWidget {
+class D_D_EL extends StatefulWidget {
   const D_D_EL({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Drag and Drop Quiz App',
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-      ),
-      home: const HomePage(),
-    );
-  }
+  State<D_D_EL> createState() => _D_D_ELState();
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class _D_D_ELState extends State<D_D_EL> {
   String ans = "";
   @override
   Widget build(BuildContext context) {

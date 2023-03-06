@@ -72,6 +72,14 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/alfabeto/
+    - assets/baloons/
+    - assets/feelings/
+    - assets/fruits/
+    - assets/numeros/
+    - assets/pronombres/
+    - assets/vocales/
+    - assets/geometric/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

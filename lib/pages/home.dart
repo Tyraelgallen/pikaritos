@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image(
+                  const Image(
                     image: AssetImage(
                       "assets/images/portada.png",
                     ),
@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pushNamed('menu');
                     },
-                    child: Image(
+                    child: const Image(
                       fit: BoxFit.cover,
                       image: AssetImage("assets/images/jugars.png"),
                       width: 300,

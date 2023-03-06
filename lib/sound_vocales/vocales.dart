@@ -1,21 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:soundpool/soundpool.dart';
 
-class Fgtrapecio extends StatelessWidget {
-  const Fgtrapecio({super.key});
+class VocalesPage extends StatefulWidget {
+  const VocalesPage({Key? key}) : super(key: key);
+
+  @override
+  State<VocalesPage> createState() => _VocalesPageState();
+}
+
+class _VocalesPageState extends State<VocalesPage> {
+  List<String> list = [
+    "assets/vocales/WA.png",
+    "assets/vocales/WE.png",
+    "assets/vocales/WI.png",
+    "assets/vocales/WO.png",
+    "assets/vocales/WU.png"
+  ];
+  int current_page = 0;
+
+  void next() {
+    if (current_page + 1 < list.length) {
+      current_page++;
+      setState(() {});
+    }
+  }
+
+  void back() {
+    if (current_page != 0) {
+      current_page--;
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Vocales"),
+        centerTitle: true,
+      ),
       body: Column(children: [
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 10),
             child: Container(
-              width: size.width,
-              height: size.height * 0.5,
+              width: 300,
+              height: 300,
               decoration: BoxDecoration(
                 border: Border.all(
                   width: 2,
@@ -24,12 +57,12 @@ class Fgtrapecio extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
-                child: const Image(
-                  image: AssetImage("assets/images/trapecio.png"),
-                  //-------------LOGO--------------
+                child: Image.asset(
+                  list[current_page],
+                  // width: size.width,
+                  // height: size.height,
+                  // fit: BoxFit.contain,
                 ),
-                // child: Image.asset(
-                // widget.objetos[currentPage],
               ),
             ),
           ),
@@ -37,8 +70,10 @@ class Fgtrapecio extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 0),
           child: SizedBox(
-            width: size.width,
+            width: 300,
+            height: 100,
             child: TextFormField(
+              cursorHeight: 50,
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -74,17 +109,21 @@ class Fgtrapecio extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FloatingActionButton(
-              heroTag: "back2",
+              heroTag: "back",
               tooltip: "Atras",
-              onPressed: () {},
+              onPressed: () {
+                back();
+                setState(() {});
+              },
               child: const Icon(Icons.keyboard_double_arrow_left),
             ),
-            const SizedBox(width: 75),
+            const SizedBox(width: 15),
             FloatingActionButton(
-              heroTag: "next2",
+              heroTag: "next",
               tooltip: "Adelante",
               onPressed: () {
-                Navigator.of(context).pushNamed('penta');
+                next();
+                setState(() {});
               },
               child: const Icon(Icons.keyboard_double_arrow_right),
             )
@@ -95,11 +134,6 @@ class Fgtrapecio extends StatelessWidget {
   }
 }
 
-//--------------------------------------------------------------
-
-//------------------------------------------------------------
-
-//------------------------------------------------------------
 Future<void> _Patosoundbutton() async {
   Soundpool pool = Soundpool(streamType: StreamType.notification);
   int soundId =
