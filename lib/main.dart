@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:leer_escribir/colors/colors.dart';
+import 'package:leer_escribir/drag&drop/howfeel.dart';
 import 'package:leer_escribir/figuras_geometricas/figurasgeomet.dart';
-import 'package:leer_escribir/pages/drag_drop_colores.dart';
+import 'package:leer_escribir/drag&drop/drag_drop_colores.dart';
 import 'package:leer_escribir/sound_vocales/abcd.dart';
 import 'package:leer_escribir/pages/home.dart';
 import 'package:leer_escribir/pages/menu.dart';
-import 'package:leer_escribir/pages/menu_colorea.dart';
+import 'package:leer_escribir/vocales%20alfabeto%20numeros%20colorear/menu_colorea.dart';
 import 'package:leer_escribir/sound_vocales/vocales.dart';
 
 void main() {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         'abc': (context) => const AbcScreen(),
         'figurasgeom': (context) => const FigurasGeometricas(),
         'colors': (context) => const ColorsPage(),
+        'motion': (context) => const Motion(),
       },
     );
   }

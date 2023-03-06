@@ -90,10 +90,10 @@ class _ColorsPageState extends State<ColorsPage> {
                       // height: size.height,
                       // fit: BoxFit.contain,
                     ),
-                    const Text(
-                      '    BLACK',
-                      style: TextStyle(fontSize: 20, color: Colors.grey),
-                    ),
+                    //const Text(
+                    //'    BLACK',
+                    //style: TextStyle(fontSize: 20, color: Colors.grey),
+                    //),
                     const SizedBox(height: 8),
                     Container(
                       height: 100,

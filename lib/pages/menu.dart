@@ -17,6 +17,19 @@ class Menu extends StatelessWidget {
                 Column(
                   children: [
                     //colorea y aprende
+
+                    ElevatedButton(
+                      style: Styles.button_style,
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('motion');
+                      },
+                      child: const Image(
+                        fit: BoxFit.cover,
+                        image: AssetImage("assets/images/bttn_colorea.png"),
+                        width: 300,
+                      ),
+                    ),
+
                     ElevatedButton(
                       style: Styles.button_style,
                       onPressed: () {
@@ -60,7 +73,7 @@ class Menu extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).pushNamed('figurasgeom');
                         },
-                        child: Text(
+                        child: const Text(
                           "Figuras Geometricas",
                           style: TextStyle(color: Colors.black),
                         )),
@@ -70,7 +83,7 @@ class Menu extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).pushNamed('colors');
                         },
-                        child: Text(
+                        child: const Text(
                           "Globos de Colores",
                           style: TextStyle(color: Colors.black),
                         )),

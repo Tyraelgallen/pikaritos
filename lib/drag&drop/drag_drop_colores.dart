@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leer_escribir/styles.dart/styles.dart';
 
 class FruitSelectApp extends StatefulWidget {
   const FruitSelectApp({Key? key}) : super(key: key);
@@ -90,14 +91,14 @@ class FruitNameCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 140,
+      height: 30,
+      width: 50,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: item.color,
         borderRadius: BorderRadius.circular(10.0),
       ),
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(12),
       child: Text(
         item.name,
         textAlign: TextAlign.center,
@@ -132,8 +133,8 @@ class FruitImagesView extends StatelessWidget {
         color: highlighted ? const Color(0xFFF64209) : Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 10.0,
-            vertical: 16.0,
+            horizontal: 5.0,
+            vertical: 1.0,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -141,9 +142,9 @@ class FruitImagesView extends StatelessWidget {
               Image(
                 image: AssetImage(fruitImage.image),
                 fit: BoxFit.cover,
-                height: 60,
+                height: 30,
               ),
-              const SizedBox(height: 8.0),
+              const SizedBox(height: 5.0),
               Visibility(
                 visible: fruitImage.isCorrect,
                 child: Text(
@@ -165,14 +166,25 @@ class FruitImagesView extends StatelessWidget {
 }
 
 const List<FruitItem> fruitNameList = [
-  FruitItem(name: 'Grapes', id: 1, color: Color(0xFFcf8c82)),
-  FruitItem(name: 'Apple', id: 2, color: Color(0xFFFF9C99)),
-  FruitItem(name: 'Mango', id: 3, color: Color(0xFFdcccff)),
+  FruitItem(name: ' 2 + 1 = ', id: 1, color: Color(0xFFcf8c82)),
+  FruitItem(name: '2 + 2 =', id: 2, color: Color(0xFFFF9C99)),
+  FruitItem(name: '2 + 3 =', id: 3, color: Color(0xFFdcccff)),
   FruitItem(name: 'Strawberry', id: 4, color: Color(0xFF8ac2ed)),
   FruitItem(name: 'Banana', id: 5, color: Color(0xFFfcf000)),
+  FruitItem(name: 'Grapes', id: 1, color: Color.fromARGB(255, 230, 223, 31)),
+  FruitItem(name: 'Apple', id: 2, color: Color.fromARGB(255, 109, 212, 140)),
+  FruitItem(name: 'Mango', id: 3, color: Color.fromARGB(255, 31, 230, 144)),
+  FruitItem(
+      name: 'Strawberry', id: 4, color: Color.fromARGB(255, 200, 169, 34)),
+  FruitItem(name: 'Banana', id: 5, color: Color.fromARGB(255, 235, 48, 141)),
 ];
 
 List<FruitImage> fruitImages = [
+  FruitImage(name: '2 + 1 ', image: "assets/fruits/apple.png"),
+  FruitImage(name: 'Banana', image: "assets/fruits/banana.png"),
+  FruitImage(name: 'Grapes', image: "assets/fruits/grape.png"),
+  FruitImage(name: 'Mango', image: "assets/fruits/mango.png"),
+  FruitImage(name: 'Strawberry', image: "assets/fruits/strawberry.png"),
   FruitImage(name: 'Apple', image: "assets/fruits/apple.png"),
   FruitImage(name: 'Banana', image: "assets/fruits/banana.png"),
   FruitImage(name: 'Grapes', image: "assets/fruits/grape.png"),

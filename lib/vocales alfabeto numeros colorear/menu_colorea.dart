@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leer_escribir/images.dart';
-import 'package:leer_escribir/pages/draw_page.dart';
+import 'package:leer_escribir/vocales%20alfabeto%20numeros%20colorear/draw_page.dart';
 import 'package:leer_escribir/styles.dart/styles.dart';
 
 class MenuColorea extends StatelessWidget {

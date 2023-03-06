@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leer_escribir/styles.dart/styles.dart';
 
 class Emotion {
   int id;
@@ -60,7 +61,7 @@ class _MotionState extends State<Motion> {
                     child: Padding(
                       padding: const EdgeInsets.all(30.0),
                       child: selected != null
-                          ? Image.asset("assets/${selected!.icon}")
+                          ? Image.asset("assets/feelings/${selected!.icon}")
                           : null,
                     ),
                   );
@@ -73,7 +74,19 @@ class _MotionState extends State<Motion> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: _emotions.map<Widget>(buildIcon).toList(),
                 ),
-              )
+              ),
+              ElevatedButton(
+                style: Styles.button_style,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Image(
+                  fit: BoxFit.fill,
+                  image: AssetImage("assets/images/close.png"),
+                  width: 100,
+                  // height: 100,
+                ),
+              ),
             ],
           ),
         ),
